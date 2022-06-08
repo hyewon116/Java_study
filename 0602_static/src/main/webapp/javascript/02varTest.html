@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>02varTest.html</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var testVar1 = 777;
+			function local1() {
+				var testVar1 = 888; //var 선언을 안 하면 둘 다 888로 나옴 = 전역 변수니까.
+				alert(testVar1); //888
+				testVar2 = 999; //전역변수 (만약 지역변수라면 {} 밖에서 실행 불가.(함수명 없이))
+			}
+			local1(); //local1 함수 실행
+			alert(testVar1); //777
+			alert(testVar2); //999			
+		</script>
+		<script type="text/javascript">
+			let testLet1 = 111;
+			function local2() {
+				let testLet1 = 222;
+				alert(testLet1);//222
+				let testLet2 = 333; //지역 변수. 
+			}
+			local2(); 
+			alert(testLet1);//111
+			alert(testLet2);//error (지역 변수라서 실행 불가)
+		</script>
+		<script type="text/javascript">
+			alert("=== 끝부분 확인 ===");
+			alert(testVar1); //777 (전역 변수)
+			alert(testLet1); //111 (전역 변수)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>09usemap.html</title>
+	</head>
+	<body>
+		usemap : 이미지의 일부에 링크를 만드는 방법 
+		<br>shape="rect"(사각형) : coords = 좌상단 모서리 값 + 우하단 모서리 값 
+		<br>shape="circle"(원) : coords = 중심 좌표 + 반지름 
+		<br>shape="poly"(다각형) : coords = 다각형의 연결되는 꼭지점을 다수 선언 가능
+		<br><br>
+		<img src="./naver_news.PNG" usemap="#naver1">
+		<map name="#naver1">
+			<area shape="rect" coords="10, 10, 120, 60"
+			href="https://newsstand.naver.com/?list=&pcode=308" target="_blank">
+			<area shape="circle" coords="200, 50, 50"
+			href="https://newsstand.naver.com/?list=&pcode=016" target="_blank">
+		</map>
+	</body>
+</html>

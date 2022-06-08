@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>04operator3.html</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let a = 7; a++;
+			document.write("<h1>7++ : " + a + "</h1>"); //8
+			let b = 7; b--;
+			document.write("<h1>7-- : " + b + "</h1>"); //6
+			let c = 7; 
+			let e = ++c * 3; // ++ -> * -> = : ++이 가장 먼저 실행
+			document.write("<h1>8*3 : " + e + "</h1>"); //24
+			let d = 7; 
+			let f = d++ * 3; // * -> = -> ++ : ++이 가장 나중에 실행 (연산 후에 d값이 바뀜)
+			document.write("<h1>7*3 : " + f + "</h1>"); //21
+			document.write(d) //8
+			
+			document.write("<hr>");
+			
+			let num1 = 777;  let num2 = 888;
+			let max = (num1 > num2)? num1 : num2 //삼항연산자
+			document.write("<h1>max : " + max + "</h1>");
+			
+		</script>
+	</body>
+</html>

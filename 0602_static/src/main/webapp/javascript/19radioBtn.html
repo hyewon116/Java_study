@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>19radioBtn.html</title>
+	</head>
+	<body>
+		<h2>Radio Button의 value에 접근하는 법</h2>
+		당신의 국적은? <br><br>
+		<input type="radio" id ="rdo1" name = "gukjuk" value="domestic">내국인
+		<input type="radio" id ="rdo2" name = "gukjuk" value="foriegn">외국인
+		<hr>
+		<button onclick="getData();">Radio Button value 가져오기</button>
+		
+		<script type="text/javascript">
+		function getData() {
+			let checkedRdo;
+			//alert(rdo1.checked);
+			let rdoArray = document.getElementsByName("gukjuk");
+			//alert(rdoArray.length);//2
+			for(i=0; i < rdoArray.length; i++) {
+				if(rdoArray[i].checked == true) {
+					checkedRdo = rdoArray[i].value;
+				}//if
+			}//for
+			alert(checkedRdo);
+		}//function
+		</script>
+	</body>
+</html>

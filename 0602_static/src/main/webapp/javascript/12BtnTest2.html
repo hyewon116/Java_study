@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>12BtnTest2.html</title>
+	</head>
+	<body>
+		<br><br><input type="checkbox" name="deleteYN"> 삭제하시겠습니까?
+		<br><br><input type="checkbox" name="deleteYN"> 삭제하시겠습니까?
+		<br><br><input type="checkbox" name="deleteYN"> 삭제하시겠습니까?
+		<br><br><input type="checkbox" name="deleteYN"> 삭제하시겠습니까?
+		<br><br><input type="checkbox" name="deleteYN"> 삭제하시겠습니까?
+		<br><br><input type="checkbox" name="deleteYN"> 삭제하시겠습니까?
+		<br><br><input type="checkbox" name="deleteYN"> 삭제하시겠습니까?
+		<br><br><input type="checkbox" name="deleteYN"> 삭제하시겠습니까?
+		<br><br><input type="checkbox" name="deleteYN"> 삭제하시겠습니까?
+		<br><br><input type="checkbox" name="deleteYN"> 삭제하시겠습니까?
+		<br><br>
+		<input type ="button" id="btn1" name="btn1" value="Select All"
+				onclick="chgValue();"> <!-- value = 눈에보이는 값  --> 
+		<script type="text/javascript">
+		function chgValue() {
+			let checkboxArray = document.getElementsByName("deleteYN");
+			//alert(checkboxArray.length); //10
+			for (let i = 0; i < checkboxArray.length; i++) {
+				if(btn1.value == "Select All") {
+					checkboxArray[i].checked = true;
+				} else {
+					checkboxArray[i].checked = false;
+				}//if
+			}//for
+			if(btn1.value == "Select All") {
+				btn1.value = "DeSelect All";
+			} else {
+				btn1.value = "Select All";
+			}//if
+ 		}//function 
+
+		</script>
+	</body>
+</html>

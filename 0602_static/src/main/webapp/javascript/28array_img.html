@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>28array_img.html</title>
+	</head>
+	<body>
+		<button onclick="changeImage();"> 그림 바꾸기 </button>
+		<script type="text/javascript">
+		let arr1 = new Array("./fruit1.jpg", "./fruit2.jpg");
+		let clickCount = 0;
+		function changeImage() {
+			//alert(clickCount);
+			//alert(clickCount % 2); //0과 1만 번갈아 나옴
+			document.body.background = arr1[clickCount % 2];
+			clickCount++;
+		}
+		</script>
+	</body>
+</html>
+
+
+
+

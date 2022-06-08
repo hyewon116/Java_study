@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>17pwdCheck.html</title>
+	</head>
+	<body>
+		<h2>패스워드 입력 여부 체크, 8자 이상 체크, 비밀번호 확인 체크</h2>
+		비밀번호 : <input type="password" id="pwd" name="pwd" maxlength="20">
+		<br><br>
+		비밀번호 확인 : <input type="password" id="repwd" name="repwd" maxlength="20">
+		<hr>
+		<button onclick="validation_check();"> 회원 가입 </button>
+		
+		<script type="text/javascript">
+		function validation_check() {
+			//alert(pwd.value);
+			if(pwd.value.trim() == "") {//입력 여부 체크
+				alert("패스워드를 입력해 주세요!");
+				pwd.focus();
+				return;
+			}//if
+			if(pwd.value.trim().length < 8) {
+				alert("패스워드는 8자 이상이어야 합니다.");
+				pwd.focus();
+				return;
+			}
+			if(pwd.value != repwd.value) {
+				alert("패스워드와 패스워드 확인이 다른 값입니다.");
+				return;
+			}
+			alert("회원 가입 완료.");
+		}//function
+		</script> 
+ 	</body>
+</html>

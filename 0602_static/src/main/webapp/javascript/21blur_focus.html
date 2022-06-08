@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>21blut_focus.html</title>
+	</head>
+	<body>
+		<h2>blur : 떠날 때 발생하는 이벤트</h2>
+		<input type="text" id="txt1" onblur="byebye();"> <!--blur 이벤트 = focus를 잃는 것 (text 창 클릭 후 다른 데 클릭하면 뜨는 것)-->
+		<script type="text/javascript">
+		function byebye() {
+			alert("blur 이벤트 발생!");
+		}
+		</script>
+		<h2>focus : 선택될 때 발생하는 이벤트</h2>
+		<input type="text" id="txt2" onfocus="hello();">
+		<script type="text/javascript">
+		function hello() {//focus : 선택될 때 발생하는 이벤트.
+			txt2.value = "focus 이벤트 발생!";
+		}
+		</script>
+	</body>
+</html>
