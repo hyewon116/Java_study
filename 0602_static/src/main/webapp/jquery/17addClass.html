@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>17addClass.html</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<style type="text/css">
+		.boxStyle {
+			width : 300px;
+			height : 300px;
+			background-color : lavender;
+			border : 3px solid darkslateblue;
+		}
+		</style>
+	</head>
+	<body>
+		<script>
+		$(document).ready(function() {
+			
+			$("#removeBtn").click(function() {
+				$("#testBox").removeClass("boxStyle");
+			});//click
+			$("#addBtn").click(function() {
+				$("#testBox").addClass("boxStyle");  //boxStyle이라는 css block을 textbox에 적용할 것임.
+			});//click
+			//addClass() : block css 적용.
+			//css() : inline css 적용.
+		});//ready
+		</script>
+		<button id="addBtn"> add Class </button>
+		<button id="removeBtn"> remove Class </button>
+		<div id="testBox"></div>
+	</body>
+</html>

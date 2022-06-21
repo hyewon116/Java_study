@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>15child_selector.html</title>
+		<style type="text/css">
+		table > tr > td {   /* 적용되지 않음 */
+			background-color: orange;   
+		}
+		thead > tr > th {
+			background-color: skyblue;
+		}
+		</style>
+	</head>
+	<body>
+		<table border="1">
+			<thead>
+				<tr><th>no</th><th>id</th><th>tel</th></tr>
+			</thead>
+			<tr>
+				<td>1</td><td>apple</td><td>010</td>
+			</tr>
+		</table>
+	</body>
+</html>

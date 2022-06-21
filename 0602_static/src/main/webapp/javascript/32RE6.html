@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>32RE6.html</title>
+	</head>
+	<body>
+		<input type="text" id="txt1" name="txt1" value="여러분안녕하세요">
+		<button onclick="addComma();"> ADD COMMA </button>
+		
+		<script type="text/javascript">
+		function addComma() {
+			txt1.value = txt1.value.replaceAll(",",""); //콤마 제거 -> 콤마가 계속 추가되지 않도록
+			let origin = txt1.value;
+			let copy = ""; //한 글자씩 복사하면서 ,를 추가하기 위해 필요한 변수
+			for (let i = origin.length-1, no=1; i>=0; i--, no++) { //origin.length - 1 => 뒤에서부터 글자를 센다는 의미
+				copy = origin.charAt(i) + copy;
+				//쉼표 추가
+				if(no % 3 == 0 && i != 0) copy = "," + copy; //i != 0 => 맨 앞글자 앞에는 쉼표 넣지 않는다
+		//		alert(copy);
+				}//for
+			txt1.value = copy;
+			}//function			
+		</script>
+	</body>
+</html>

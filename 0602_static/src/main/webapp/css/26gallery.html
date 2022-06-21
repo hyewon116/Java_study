@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>26gallery.html</title>
+		<style type="text/css">
+		.gallery {
+			width : 10%;
+			border : 3px solid purple;
+			float : left;
+			margin : 10px; /* 전후좌우 모두 여백 */
+		}
+		img {
+			width : 100%;   /* gallery 안에서 100% */
+		}
+		.img_desc {
+			height : 70px;
+			border-top : 3px solid purple; /* 윗줄만 긋기 */
+		}
+		#main_gallery {
+			width : 300px;
+			border : 3px solid purple;
+		}
+		</style>
+		<script type="text/javascript">
+			function mainGal(obj) {
+				main_gallery.innerHTML = "<img src='" + obj.src + "'>";
+			}//mainGal
+		</script>
+	</head>
+	<body>
+		
+		<div id="main_gallery"></div>
+		
+		<div class="gallery"> 
+			<img src="../javascript/fruit2.jpg" onclick="mainGal(this);">
+			<div class="img_desc">
+				이미지에 대한 설명입니다.
+			</div>
+		</div>
+		
+		<div class="gallery">
+			<img src="../javascript/fruit1.jpg">
+			<div class="img_desc">
+				이미지에 대한 설명입니다.
+			</div>
+		</div>
+	</body>
+</html>

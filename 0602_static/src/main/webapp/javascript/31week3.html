@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>31week3.html</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		let today = new Date();
+		let getMonth = today.getMonth();
+		alert(getMonth);
+		let firstDay = new Date("2022", getMonth, 1); //이번 달의 첫 날 
+		//★!!왜 getMonth에 +1 안해주지??? new Date 객체 안에선 5 = 6월로 자동으로 인식함. 0 = 1월, 컴퓨터한테는 5가 걍 6월(jun)인 거임. 숫자로 출력할 때는 5이지만.
+		let lastDay = new Date("2022", getMonth + 1, 0); //이번 달 말일
+	//	alert(firstDay);
+	//	alert(lastDay);
+		document.write("<h1>" + (getMonth + 1) + "월</h1>");
+		let yoil = new Array("일", "월", "화", "수", "목", "금", "토");
+		
+		document.write("<table border=1><tr>");
+		for (let i = 0; i < yoil.length; i++) {
+			document.write("<th>" + yoil[i] + "</th>");
+		}//for
+		document.write("</tr><tr>");
+		for (let i = 0, d = 1; d <= lastDay.getDate(); i++) {
+			if(i >= firstDay.getDay()) {
+				document.write("<td>" + d++ + "</td>");
+			} else if (i < firstDay.getDay() || i > lastDay.getDate()){
+				document.write("<td></td>");
+			}
+			if((i + 1) % 7 == 0){
+				document.write("</tr><tr>");
+			}
+		}//for
+		for (let i = 6 - lastDay.getDay(); i > 0; i--) {
+			document.write("<td></td>");
+		}
+		document.write("</tr></table>");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>33month.html</title> <!-- 31week3 복습(똑같이 쳐보기) -->
+	</head>
+	<body>
+		<script type="text/javascript">
+		let today = new Date();
+		let getMonth = today.getMonth();
+		let firstDay = new Date("2022", getMonth, 1);
+		let lastDay = new Date("2022", getMonth + 1, 0); 
+		
+		document.write("<h1>" + (getMonth + 1) + "월</h1>");
+		let yoil = new Array("일", "월", "화", "수", "목", "금", "토");
+
+		document.write("<table border=1><tr>");
+		for(let i = 0; i < yoil.length; i++) {
+			document.write("<th>" + yoil[i] + "</th>");
+		}
+		document.write("</tr><tr>");
+		for (let i = 0, d = 1; d < lastDay.getDate(); i++) {
+			if (i >= firstDay.getDay()) {
+			} else if (i >= firstDay.getDay || i > lastDay.getDate()){
+				document.write("<td></td>");
+			}
+			if((i+1)%7 == 0) {
+				document.write("</tr><tr>");
+			}
+		}
+		for (let i = 6 - lastDay.getDay(); i > 0; i--) {
+			document.write("<td></td>");
+		}
+		document.write("</tr></table>");
+		</script>
+	</body>
+</html>

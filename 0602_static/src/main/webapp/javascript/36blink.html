@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>36blink.html</title>
+	</head>
+	<body>
+		<h1 id="bantxt">반짝이는 글자</h1>
+		<button onclick="changeColor();"> 반짝 시작 </button>
+		<button onclick="stopColor();"> 반짝 중지 </button>
+		<hr>
+		* setInterval(함수 이름, 시간); => 일정 시간이 지난 후에 이름을 호출.
+		<script type="text/javascript">
+		let intervalID;
+		function stopColor() {
+			clearInterval(intervalID);
+		}
+		function changeColor() {
+			intervalID = setInterval(txtColor, 500); //500ms = 0.5초
+		}//changeColor
+		function txtColor() {
+			bantxt.style.color = (bantxt.style.color == "red")? "blue": "red"; // = 대입, == 비교
+		}
+		</script>
+	</body>
+</html>

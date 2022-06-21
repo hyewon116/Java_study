@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>18parent.html</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	</head>
+	<body>
+		<script>
+		$(document).ready(function() {
+			$("#parentBtn").click(function() {
+				$("#apple").parent().css("background-color", "chocolate"); 
+			});//click
+			//parent() : 특정 element의 직속 부모 element 
+			$("#parentsBtn").click(function() {
+				$("#apple").parents().css("background-color", "beige"); 
+			});//click
+			//parents() : 특정 element의 모든 조상 element (아버지, 할아버지, 증조할아버지...) 
+			$("#parentsUntilBtn").click(function() {
+				$("#apple").parentsUntil("table").css("background-color", "aquamarine"); //부모님인데, table 전까지만. (table까지 아님!!)
+			});	//click
+			//parentsUntil() : 특정 element의 특정한 조상 이전 element까지. 
+			$("#childrenBtn").click(function() {
+				$("tbody").children("tr").css("background-color", "cadetblue"); //tbody만 선택, thead&tfoot엔 영향xx
+			});	//click
+			//children() : 특정 element의 모든 자손 element.
+			$("#findBtn").click(function() {
+				$("table").find("span").css("background-color", "lightcyan"); //특정 element만 검색 
+			    $("table").find("#apple").css("background-color", "lightcyan"); //id로도 검색 가능
+			});	//click
+			//find() : 특정 element의 모든 자손 element를 대상으로 element 검색.
+			
+		});//ready
+		</script>
+		<h1>parents & children</h1>
+		<button id="parentBtn"> direct parent of apple </button>
+		<button id="parentsBtn"> all parents of apple </button> <!-- (all)parents = 아버지, 할아버지, 증조할아버지.... -->
+		<button id="parentsUntilBtn"> parentsUntil(table) of apple </button>
+		<button id="childrenBtn"> all children of tbody </button>
+		<button id="findBtn"> find element of span </button>
+		<hr>
+		<table>
+			<thead>
+				<tr><th>번호</th><th><span>아이디</span></th><th>전화번호</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>1</td><td id="apple">apple</td><td>010</td></tr>
+				<tr><td>2</td><td >banana</td><td>011</td></tr>
+				<tr id="cherry"><td>3</td><td>cherry</td><td>012</td></tr>
+				<tr><td>4</td><td>melon</td><td>013</td></tr>
+				<tr><td>5</td><td>grape</td><td>014</td></tr>
+			</tbody>
+			<tfoot>
+				<tr><td colspan="3">@copyright</td></tr>
+			</tfoot>
+		</table>
+		<hr>
+		<h2>siblings</h2>
+		<button id="siblingsBtn"> siblings of tbody tr </button>
+		<button id="prevBtn"> prev sibling of cherry tr</button>
+		<button id="nextBtn"> next sibling of cherry tr</button>
+		<script>
+		$(document).ready(function() {
+			
+			$("#nextBtn").click(function() {
+				$("#cherry").next().css("background-color", "lightcyan")
+			});//click
+			//next() : 특정 element의 바로 뒤에 있는 단 하나의 형제 element.
+			
+			$("#prevBtn").click(function() {
+				$("#cherry").prev().css("background-color", "lightgray"); 
+			});//click
+			//prev() : 특정 element의 바로 앞에 있는 단 하나의 형제 element.
+			
+			$("tbody > tr").click(function() {
+				$(this).nextAll().css("background-color", "lightblue");  
+				$(this).prevAll().css("background-color", "pink"); 
+			});//click
+			//nextAll() : 현재 클릭된 element의 뒤에 있는 형제 element 모두
+			//prevAll() : 현재 클릭된 element의 앞에 있는 형제 element 모두
+			$("#siblingsBtn").click(function() {
+				$("tbody > tr").siblings().css("background-color", "violet");
+			});//click
+			
+			//siblings() : 형제 element 전체.
+		});//ready
+		</script>
+	</body>
+</html>

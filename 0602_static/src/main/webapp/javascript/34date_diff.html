@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>34date_diff.html</title>
+	</head>
+	<body>
+		<input type="date" id="datetxt" name="datetxt">
+		<button onclick="dateDiff();">입력 날짜와 오늘 날짜간의 차이 구하기</button>
+		<script type="text/javascript">
+		let today = new Date();
+//		alert(today.getTime()); //timestamp:1970년01월01일00시00분기준으로 날짜를 숫자화한 것.
+//		alert(new Date("1970", "01", "02").getTime());//2732400000
+//		alert(2732400000 / 60 / 60 / 24);//31625
+	
+		function dateDiff() {
+			let testDate = new Date(datetxt.value);
+			let diff = today.getTime() - testDate.getTime();
+			alert(diff / 60 / 60 / 24 / 1000); //60초 60분 24시간 1000ms
+		}
+		</script>
+	</body>
+</html>

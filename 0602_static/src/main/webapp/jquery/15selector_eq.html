@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>15selector_eq.html</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	</head>
+	<body>
+		<h1>eq : equal, gt : greater than, lt : less than</h1>
+		<button id="eqBtn"> equal(5) </button>
+		<button id="ltBtn"> less than(5) </button>
+		<button id="gtBtn"> greater than(5) </button>
+		<script>
+		$(document).ready(function () {
+			$("#gtBtn").click(function() {
+				$("li:gt(5)").css("background-color", "orange"); //인덱스 0번지에서 시작, 5번지보다 큰 번지들 선택.
+			});//click
+			
+			$("#ltBtn").click(function() {
+				$("li:lt(5)").css("background-color", "skyblue"); //인덱스 0번지에서 시작, 5번지보다 작은 번지들 선택.
+			});//click
+			
+			$("#eqBtn").click(function() {
+				$("li:eq(5)").css("background-color", "red"); //0번지에서 시작, 5번지를 선택.
+			});//click
+		});//ready
+		</script>
+		<ul>
+			<li>apple</li>
+			<li>banana</li>
+			<li>cherry</li>
+			<li>melon</li>
+			<li>watermelon</li>
+			<li>pineapple</li>
+			<li>peach</li>
+			<li>grape</li>
+		</ul>
+	</body>
+</html>

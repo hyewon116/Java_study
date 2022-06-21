@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>19table.html</title>
+		<style type="text/css">
+		table {
+			border : 1px solid blue;
+		}
+		tbody tr {
+			background-color : lightgreen; 
+		}
+		tbody td:hover { /* hover = 마우스 오버 */
+			background-color : orange;
+		}
+		td {
+			width : 150px;
+			height : 40px;
+			text-align : center
+		}
+		</style>
+	</head>
+	<body>
+		<h1>html5 table</h1>
+		<table>
+
+			<tfoot> <!-- tfoot : 항상 테이블의 맨 아래 -->
+				<tr>
+					<td colspan="3">@copyright hello</td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td>1</td><td>apple</td><td>010</td>
+				</tr>
+				<tr>
+					<td>2</td><td>banana</td><td>011</td>
+				</tr>
+				<tr>
+					<td>3</td><td>cherry</td><td>012</td>
+				</tr>
+			</tbody>
+			<thead> <!-- thead : 항상 테이블의 맨 위 -->
+				<tr>
+					<th>mno</th><th>mid</th><th>mtel</th>
+				</tr>
+			</thead>
+		</table>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+

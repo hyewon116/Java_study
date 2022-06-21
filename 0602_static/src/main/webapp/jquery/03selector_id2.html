@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>03selector_id2.html</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<style type="text/css">
+		#baguni {
+			height : 100px;
+			border : 2px solid blue;
+		}
+		</style>
+	</head>
+	<body>
+		<h1>id selector : html의 id에 접근 </h1>
+		<div id="baguni"></div>
+		<input type="checkbox" value="죠스바">죠스바
+		<input type="checkbox" value="설레임">설레임
+		<input type="checkbox" value="투게더">투게더
+		<input type="checkbox" value="엑설런트">엑설런트
+		<input type="checkbox" value="셀렉션">셀렉션
+		<script>
+		$(document).ready(function() {
+			
+			$("input[type=checkbox]").click(function() { //checkbox를 찾는 selector
+			//	alert($(this).val());
+			//	alert( $(this).prop('checked') ); //check 여부 true/false로 출력 (체크 해제하면 false)
+				if($(this).prop("checked") == true ) {
+				   $("#baguni").append( $(this).val() );
+				} else if ($(this).prop("checked") == false ){
+					let tmp = $("#baguni").text().replace($(this).val(), "");
+					$("#baguni").text(tmp);
+				}
+			});//click
+			//prop() : javascript, css의 속성. 현재 설정된 값을 가져옴(수정했다면 수정된 값을 값을 가져온다.)
+			//attr() : html element의 속성. 처음 설정된 값을 가져옴(값의 수정 유무에 관계없이 처음 설정된 값을 가져온다.)
+			//append() : html, text 등을 추가할 때 사용하는 Jquery 함수.
+			
+/*			$(":checkbox").click(function() {  //위와 동일한 selector
+				alert($(this).val());  
+			});//click
+*/		
+		});//ready
+		//$(this) = 현재 이벤트가 일어난 html element(객체)
+		//val() = value = html element가 가진 값. 
+		</script>
+	</body>
+</html>

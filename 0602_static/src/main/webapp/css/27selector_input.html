@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>27selector_input.html</title>
+		<style type="text/css">
+		input {
+			width : 250px;
+			height : 50px;
+			border : 2px solid purple;
+			border-radius : 20px;   /* 모서리 깎기 */
+		}
+		input[type=text] {    /* 타입으로 지정 가능! */ 
+			color : purple;
+			background-color: lightgray;
+			text-align : center;   /* 글자 가운데로 */ 
+		}
+		input[type=button] {
+			background-color: #ffccff;
+		}
+		input[id=btn2] {
+			background-color: #b3daff;
+		}
+		input[class=btn3] {
+			background-color: #ccffcc;
+		}
+		input[type=button]:active {  /*클릭 모션 추가하기 (원래 버튼의 기본 기능인데 사라져서)*/ 
+			background-color: gray;
+		}
+		</style>
+	</head>
+	<body>
+		<input type="text" value="텍 스 트 필 드 1">
+		<br><br>
+		<input type="text" value="텍 스 트 필 드 2">
+		<br><br>
+		<input type="button" value=" B U T T O N ">
+		<br><br>
+		<input type="button" id="btn2" value=" B U T T O N 2 ">
+		<br><br>
+		<input type="button" class="btn3" value=" B U T T O N 3 ">
+	</body>
+</html>
